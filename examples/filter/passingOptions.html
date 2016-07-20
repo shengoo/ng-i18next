@@ -16,6 +16,7 @@
 	<script src="../../bower_components/angular/angular.js"></script>
 	<script src="../../bower_components/angular-sanitize/angular-sanitize.min.js"></script>
 	<script src="../../bower_components/i18next/i18next.js"></script>
+	<script src="../../bower_components/i18next-xhr-backend/i18nextXHRBackend.js"></script>
 	<script src="../../src/provider.js"></script>
 	<script src="../../src/filter/filter.js"></script>
 	<script src="../../src/directive/directive.js"></script>
@@ -40,7 +41,7 @@
 		</code>
 
 		<p ng-i18next="both.passingOptionsPlural"></p>
-		<p>{{'client.total' | i18next:{total:0} }}</p>
+		<p>{{'client.total' | i18next:{count:0} }}</p>
 		<p>{{'client.total' | i18next:{total:1} }}</p>
 		<p>{{'client.total' | i18next:{total:4} }}</p>
 

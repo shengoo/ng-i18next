@@ -30,7 +30,7 @@ angular.module('jm.i18next').provider('$i18next', function () {
 
 				i18nDeferred = $q.defer();
 
-				i18n.init(options, function (err, localize) {
+				i18n.use(i18nextXHRBackend).init(options, function (err, localize) {
 
 					translations = {};
 
@@ -47,7 +47,7 @@ angular.module('jm.i18next').provider('$i18next', function () {
 						$rootScope.$digest();
 					}
 
-					$rootScope.$broadcast('i18nextLanguageChange', i18n.lng());
+					$rootScope.$broadcast('i18nextLanguageChange', i18n.language);
 
 					i18nDeferred.resolve();
 

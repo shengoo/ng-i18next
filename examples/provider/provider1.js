@@ -3,10 +3,10 @@ angular.module('jm.i18next').config(function ($i18nextProvider) {
 	'use strict';
 
 	/*jshint unused:false */
-	window.i18n.addPostProcessor('patrick', function (value, key, options) {
-		//https://www.youtube.com/watch?v=YSzOXtXm8p0
-		return 'No, this is Patrick!';
-	});
+	// window.i18n.addPostProcessor('patrick', function (value, key, options) {
+	// 	//https://www.youtube.com/watch?v=YSzOXtXm8p0
+	// 	return 'No, this is Patrick!';
+	// });
 	/*jshint unused:true */
 
 	$i18nextProvider.options = {
@@ -14,7 +14,9 @@ angular.module('jm.i18next').config(function ($i18nextProvider) {
 		fallbackLng: 'dev', // Default is dev
 		useCookie: false,
 		useLocalStorage: false,
-		resGetPath: '../locales/__lng__/__ns__.json'
+		backend: {
+			loadPath: "../locales/{{lng}}/{{ns}}.json"
+		}
 	};
 
 });

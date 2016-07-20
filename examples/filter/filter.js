@@ -3,16 +3,19 @@ angular.module('jm.i18next').config(function ($i18nextProvider) {
 	'use strict';
 
 	$i18nextProvider.options = {
+		debug: true,
 		lng: 'de', // If not given, i18n will detect the browser language.
 		fallbackLng: 'dev', // Default is dev
 		useCookie: false,
 		useLocalStorage: false,
-		resGetPath: '../locales/__lng__/__ns__.json'
+		backend: {
+			loadPath: "../locales/{{lng}}/{{ns}}.json"
+		}
 	};
 
 });
 
-angular.module('MyApp', ['jm.i18next']).controller('MyFilterCtrl', function ($rootScope, $scope, $timeout) {
+angular.module('MyApp', ['jm.i18next']).controller('MyFilterCtrl', function ($rootScope, $scope, $timeout, $i18next) {
 
 	'use strict';
 
