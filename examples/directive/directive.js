@@ -76,5 +76,7 @@ angular.module('MyApp', ['jm.i18next']).controller('MyDirectiveCtrl', function (
 		$scope.date = 'Should change!';
 		$scope.dynamicBindingVariable = 'hello';
 	}, 3000);
-
+i18next.on('languageChanged', function(lng) {
+	console.log(lng);
+})
 });
